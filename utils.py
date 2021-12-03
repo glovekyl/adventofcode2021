@@ -23,4 +23,4 @@ def read_string(**kwargs):
 
 def read_lines(**kwargs):
   with open(resolve_path(**kwargs)) as f:
-    return tuple(f)
+    return tuple(map(str.strip, f))
