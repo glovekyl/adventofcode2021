@@ -1,5 +1,6 @@
 from utils import *
 from functools import reduce
+
 import math
 
 txt = read_string(day=4)
