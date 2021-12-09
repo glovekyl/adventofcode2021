@@ -36,14 +36,18 @@ def get_lows(grid):
         lows.add((x, y))
   return lows
 
-def dfs(grid, visited: set, x, y, v):
-  if (x, y) in visited or v == 9:
-    return
-  visited.add((x, y))
+def dfs(grid: tuple, visited: set, x, y):
+  stack = [(x, y,)]
   h, w = len(grid), len(grid[0])
-  for dx, dy in dirs(x, y, w, h):
-    if grid[dy][dx] > v:
-      dfs(grid, visited, dx, dy, grid[dy][dx])
+  while len(stack):
+    x, y = stack.pop()
+    if (x, y) in visited:
+      continue
+
+    visited.add((x, y))
+    for dx, dy in dirs(x, y, w, h):
+      if (val := grid[dy][dx]) > grid[y][x] and val != 9:
+        stack.append((dx, dy))
 
 def main(data):
   grid = [tuple(map(int, x)) for x in data]
@@ -51,8 +55,7 @@ def main(data):
 
   basins = []
   for x, y in lows:
-    visited = set()
-    dfs(grid, visited, x, y, grid[y][x])
+    dfs(grid, (visited := set()), x, y)
     basins.append(len(visited))
   basins.sort()
   print(basins[-3] * basins[-2] * basins[-1])
