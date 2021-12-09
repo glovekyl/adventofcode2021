@@ -1,4 +1,3 @@
-from collections import Counter
 from utils import *
 
 txt = read_string(day=7)
