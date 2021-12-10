@@ -1,3 +1,4 @@
+from functools import reduce
 from utils import *
 
 lines = read_lines(day=9)
@@ -27,11 +28,7 @@ def get_lows(grid):
     for y in range(h):
       z = grid[y][x]
 
-      lowest = True
-      for a, b in dirs(x, y, w, h):
-        if grid[b][a] <= z:
-          lowest = False
-          break
+      lowest = any(grid[dy][dx] > z for dx, dy in dirs(x, y, w, h))
       if lowest:
         lows.add((x, y))
   return lows
