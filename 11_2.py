@@ -45,7 +45,7 @@ def dirs(x, y, w, h):
     yield x + 1, y + 1
 
 def main(data):
-  data = [tuple(line) for line in data]
+  data = tuple(map(tuple, data))
   grid = np.array(data, dtype=int)
 
   count = 0

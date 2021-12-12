@@ -32,39 +32,26 @@ LOOKUP = {
 OPENERS = set(("(", "[", "{", "<"))
 CLOSERS = set((")", "]", "}", ">"))
 
-
-def syntax_errors(data) -> set:
-  corrupted = set()
-  for line in data:
-    stack = []
-    for char in line:
-      if char in OPENERS:
-        stack.append(char)
-        continue
-      if len(char) == 0: # invalid
-        corrupted.add(line)
-        break
-      if char in CLOSERS:
-        head = stack.pop()
-        if char == LOOKUP[head]: continue # valid
-        corrupted.add(line)
-        break
-  return corrupted
-
-
 def main(data):
   data = set(data)
-  data -= syntax_errors(data)
+  # data -= syntax_errors(data)
   
   scores = []
   for line in data:
     stack = []
-    for char in line:
-      if char in OPENERS:
-        stack.append(char)
-      elif char in CLOSERS:
-        stack.pop()
-    
+
+    # Syntax Errors
+    try:
+      for char in line:
+        if char in OPENERS:
+          stack.append(char)
+        if char == LOOKUP[stack.pop()]:
+          continue # valid
+        raise SyntaxError()
+    except SyntaxError:
+      continue
+
+    # Incomplete Lines
     total = 0
     while stack:
       total = score(total, stack.pop())
@@ -73,6 +60,5 @@ def main(data):
   scores.sort()
   print(scores[len(scores) // 2])
   
-
 if __name__ == "__main__":
   main(lines) # answer: 1685293086
