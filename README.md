@@ -1,12 +1,20 @@
 Work for [Advent of Code](https://adventofcode.com)
 
-| Day | Difficulty | Part 1   | Part 2   |
-| --- | ---------- | -------- | -------- |
-| 1   | Easy       | 725 µs   | 1,269 µs |
-| 2   | Easy       | 501 µs   | 571 µs   |
-| 3   | Easy       | 1,991 µs | 167 µs   |
-| 4   | Medium     | 86 µs    | 86 µs    |
-| 5   | Medium     | 152 µs   | 125 µs   |
+| Day | Group         | Part 1   | Part 2   |
+| --- | ------------- | -------- | -------- |
+| 1   | Basic         | 725 µs   | 1,269 µs |
+| 2   | Basic         | 501 µs   | 571 µs   |
+| 3   | Bits/Bytes    | 1,991 µs | 167 µs   |
+| 4   | Players       | 86 µs    | 86 µs    |
+| 5   | Lines/Overlap | 152 µs   | 125 µs   |
+| 6   | BigInt        | 67 µs    | 66 µs    |
+| 7   | Distance      | 66 µs    | 65 µs    |
+| 8   | Cryptography  | 116 µs   | 102 µs   |
+| 9   | Stacks/Queues | 92 µs    | 88 µs    |
+| 10  | Stacks/Queues | 92 µs    | 88 µs    |
+| 11  | Binary Tree   | 74 µs    | 71 µs    |
+| 12  | Binary Tree   | 103 µs   |          |
+| 13  | Distance      | 223 µs   | 413 µs   |
 
 ## Day Three
 
