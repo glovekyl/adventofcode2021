@@ -83,8 +83,7 @@ class Node(NodeObject):
     self._visited_count = i
     return self._visited_count
 
-def dfs(known: list[str], node: Node, _v: set[Node]=set(), _p: list=list()):
-  visited, path = _v.copy(), _p.copy()
+def dfs(known: list[str], node: Node, visited: set[Node]=set(), path: list=list()):
   if node.key == 'end':
     known.append(','.join(path + ['end',]))
     return
@@ -94,7 +93,7 @@ def dfs(known: list[str], node: Node, _v: set[Node]=set(), _p: list=list()):
     if node.key.islower():
       visited.add(node)
     for edge in node.edges:
-      dfs(known, edge, visited, path)
+      dfs(known, edge, visited.copy(), path.copy())
 
 def main(data):
   data = tuple(line.split('-') for line in data)
