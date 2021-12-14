@@ -1,6 +1,6 @@
 Work for [Advent of Code](https://adventofcode.com)
 
-| Day | Group         | Part 1   | Part 2   |
+| Day | Problem Group | Part 1   | Part 2   |
 | --- | ------------- | -------- | -------- |
 | 1   | Basic         | 725 µs   | 1,269 µs |
 | 2   | Basic         | 501 µs   | 571 µs   |
@@ -15,6 +15,7 @@ Work for [Advent of Code](https://adventofcode.com)
 | 11  | Binary Tree   | 74 µs    | 71 µs    |
 | 12  | Binary Tree   | 103 µs   |          |
 | 13  | Distance      | 223 µs   | 413 µs   |
+| 14  | BigInt        | 142 µs   | 143 µs   |
 
 ## Day Three
 
